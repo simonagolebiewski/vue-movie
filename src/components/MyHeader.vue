@@ -1,26 +1,47 @@
 <template>
-  <header class="vue-header">
-    <div class="logo-container__wrapper">
-      <img src="../assets/film.svg" class="logo-container__wrapper__icon">
-      <div class="logo-container__wrapper__name">Movie-Vue</div>
+  <!-- <header class="vue-header">
+    <div class="app-container__wrapper">
+      <img src="../assets/film.svg" class="app-container__wrapper__icon">
+      <div class="app-container__wrapper__name">Movie-Vue</div>
     </div>
-    <div class="logo-container__wrapper__routes">
-      <router-link to="/">Home</router-link>
+    <div class="app-container__wrapper__routes">
+      <router-link to="/" v-if="user">Home</router-link>
       <router-link to="/towatchlist">Watch-List</router-link>
+      <a v-on:click="logout" v-if="user">Logout</a>
     </div>
-  </header>
+  </header> -->
 </template>
+<script type="text/javascript">
+  import firebase from 'firebase';
+  export default {
+    computed: {
+      user () {
+        return this.$store.getters.getUser;
+      }
+    },
+    methods : {
+      logout: function() {
+        firebase.auth().signOut().then(() => {
+          this.$router.replace('login');
+        })
+      }
+    }
+  }
+</script>
 <style lang="scss">
   .vue-header {
-    height: 50px;
-    // box-shadow: 0px -7px 5px 8px #6921bc;
-    background: linear-gradient(to right, #6921bc , #5935dd, #b280ed);
   }
-  .logo-container {
-    // display: inline-block;
-    width: 800px;
-    margin: 40px auto;
-    height: 100%;
+  .app-container {
+
+    h1 {
+      // text-transform: uppercase;
+      font-size: 25px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
     &__wrapper {
       position: relative;
       top: 6px;
@@ -43,21 +64,25 @@
         display: inline-block;
         float: right;
         position: relative;
-        top: 5px;
+        top: 17px;
         right: 20px;
         a {
-          color: #ffffff;
           text-decoration: none;
-          font-size: 14px;
-          margin: 0 10px 0px 0;
+          font-size: 12px;
+          margin: 0 5px 0px 0;
+          padding: 10px;
+          border-radius: 3px;
+          cursor: pointer;
+          text-transform: uppercase;
+          color: #4D6AEB;
+          border: 1px solid #4D6AEB;
+
+          &:hover{
+            font-weight: bold;
+          }
 
           &:last-child{
             margin-right: 0;
-          }
-
-          &:hover{
-            border: 2px solid #ffffff;
-            padding: 2px 5px;
           }
         }
       }
