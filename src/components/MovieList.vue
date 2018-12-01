@@ -145,7 +145,7 @@ export default {
     width: 60%;
     display: inline-block;
     background: #2E2E2E;
-    padding: 40px 40px 0 40px;
+    padding: 40px;
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: #e0e0e0;
     }

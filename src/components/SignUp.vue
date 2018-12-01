@@ -54,11 +54,17 @@ export default {
     padding: 60px 0;
     width: 600px;
     background: #FFFFFF;
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+    }
     &__header {
       font-size: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #636363;
+      @media only screen and (max-width: 425px) {
+        font-size: 20px;
+      }
     }
   }
   input {
@@ -70,6 +76,13 @@ export default {
     background: #ffffff;
     border: 2px solid #4D6AEB;
     border-radius: 3px;
+    border-style:solid;
+    @media only screen and (max-width: 768px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 425px) {
+      width: 80%;
+    }
 
     &:focus {
       outline: 0;
@@ -79,7 +92,7 @@ export default {
     -webkit-box-shadow: 0 0 0 30px white inset;
   }
   button {
-    width: 10%;
+    // width: 10%;
     cursor: pointer;
     display: block;
     text-align: center;
