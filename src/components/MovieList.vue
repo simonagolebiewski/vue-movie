@@ -145,7 +145,7 @@ export default {
     width: 60%;
     display: inline-block;
     background: #2E2E2E;
-    padding: 40px;
+    padding: 40px 40px 0 40px;
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: #e0e0e0;
     }
@@ -162,10 +162,8 @@ export default {
     @media only screen and (max-width: 768px) {
       display: block;
       width: 100%;
-      height: 60%;
-      position: absolute;
-      top: 0;
-      bottom: 40%;
+      background: #2E2E2E;
+      padding: 40px;
     }
 
     h1 {
@@ -291,6 +289,7 @@ export default {
     @media only screen and (max-width: 768px) {
       padding: 8px;
       font-size: 12px;
+      float: none;
     }
     &:hover {
       color: #4D6AEB;

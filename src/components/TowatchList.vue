@@ -207,11 +207,12 @@ export default {
     @media only screen and (max-width: 768px) {
       display: block;
       width: 100%;
-      position: absolute;
+      position: relative;
       bottom: 0;
-      height: 40%;
-      top: 60%;
       padding-top: 40px;
+      background: #F9F9F9;
+      padding: 69px 40px 0;
+      height: 100%;
     }
     h1 {
       color: #262626;
@@ -228,6 +229,7 @@ export default {
     border-right: none;
     border-left: none;
     border-bottom: 1px solid #4D6AEB;
+    border-radius: 0;
 
     &:focus {
       outline: 0;
@@ -301,7 +303,7 @@ export default {
 
   button {
     font-size: 14px;
-    background-color: #F9F9F9;
+    background-color: transparent;
     appearance: none;
     border: none;
     padding: 1px 0;
