@@ -286,6 +286,7 @@ export default {
     color: white;
     border: 1px solid white;
     padding: 10px;
+    background: #2e2e2e;
     @media only screen and (max-width: 768px) {
       padding: 8px;
       font-size: 12px;
